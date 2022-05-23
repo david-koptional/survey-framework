@@ -1,0 +1,259 @@
+{
+  "1": {
+    "name": "Part 1. Identifying Information",
+    "id": "1",
+    "next": "2",
+    "questions": [
+      {
+        "id": "1.1",
+        "name": "Date of Assessment",
+        "section": "1",
+        "options": [],
+        "value": null,
+        "defaultValue": null,
+        "extraInfo": "tooltip",
+        "type": "date"
+      },
+      {
+        "id": "1.2",
+        "section": "1",
+        "name": "Facility ID Number",
+        "options": [],
+        "value": null,
+        "defaultValue": null,
+        "extraInfo": "tooltip",
+        "type": "number"
+      },
+      {
+        "id": "1.3",
+        "section": "1",
+        "name": "Reviewer's Identifier Number",
+        "options": [],
+        "value": null,
+        "defaultValue": null,
+        "extraInfo": "tooltip",
+        "type": "number"
+      }
+    ]
+  },
+  "2": {
+    "name": "Part 2. Antipsychotic Medication Reduction Initiatives",
+    "id": "2",
+    "next": "3",
+
+    "questions": [
+      {
+        "id": "2.1",
+        "section": "2",
+        "name": "Does your facility have residents who are receiving any antipsychotic medications?",
+        "options": ["red", "blue", "green", "orange"],
+        "value": null,
+        "defaultValue": null,
+        "type": "yes/no"
+      },
+      {
+        "id": "2.2",
+        "section": "2",
+        "name": "Has your facility identified residents who are appropriate for gradual dose reductions?",
+        "options": ["yes", "no"],
+        "value": null,
+        "skipsTo": [
+          {
+            "id": "4.3",
+            "value": "yes",
+            "section": "4"
+          }
+        ],
+        "defaultValue": null,
+        "type": "yes/no"
+      },
+      {
+        "id": "2.3",
+        "section": "2",
+        "name": "Has your facility started gradual dose reductions for residents identified as appropriate for antipsychotic medication reduction?",
+        "options": [],
+        "value": null,
+        "defaultValue": null,
+        "type": "yes/no"
+      },
+      {
+        "id": "2.4",
+        "section": "2",
+        "name": "What percentage of residents in your facility have received antipsychotic medications in the previous3 years?",
+        "options": [],
+        "value": null,
+        "defaultValue": null,
+        "type": "percent"
+      },
+      {
+        "id": "2.5",
+        "section": "2",
+        "name": "What percentage of residents in your facility currently receives antipsychotic medications?",
+        "options": [],
+        "value": null,
+        "defaultValue": null,
+        "type": "percent"
+      },
+      {
+        "id": "2.6",
+        "section": "2",
+        "name": "What percentage of residents with a diagnosis of Alzheimers disease or another form of dementia are currently receiving antipsychotic medications?",
+        "options": [],
+        "value": null,
+        "defaultValue": null,
+        "type": "percent"
+      }
+    ]
+  },
+  "3": {
+    "name": "Part 3. Alzheimer’s Disease and Dementia Care",
+    "id": "3",
+    "next": "4",
+    "questions": [
+      {
+        "id": "3.1",
+        "section": "3",
+        "name": "What percentage of residents in your facility have been diagnosed with Alzheimers Disease or another form of dementia?",
+        "options": [],
+        "value": null,
+        "defaultValue": null,
+        "type": "percent"
+      },
+      {
+        "id": "3.2",
+        "section": "3",
+        "name": "Does your facility have a state Alzheimers certification?",
+        "options": [],
+        "value": null,
+        "defaultValue": null,
+        "type": "yes/no"
+      },
+      {
+        "id": "3.3",
+        "section": "3",
+        "optional": true,
+        "name": "If “yes” to 3.2, is the entire building Alzheimers certified or do you have a Alzheimers certified floor or unit?",
+        "options": [],
+        "value": null,
+        "defaultValue": null,
+        "type": "yes/no",
+        "requiresAnswer": [
+          {
+            "id": "3.2",
+            "value": "yes"
+          }
+        ]
+      }
+    ]
+  },
+  "4": {
+    "name": "Part 4. Policies and Procedures, including Staff Training",
+    "id": "4",
+    "next": "5",
+    "questions": [
+      {
+        "id": "4.1",
+        "section": "4",
+        "name": "Has your staff received comprehensive training on identifying, reporting and preventing Abuse, Neglect and Exploitation of residents?",
+        "options": [],
+        "value": null,
+        "defaultValue": null,
+        "type": "yes/no"
+      },
+      {
+        "id": "4.2",
+        "section": "4",
+        "name": "Has your staff received specific training on residents’ rights?",
+        "options": [],
+        "value": null,
+        "defaultValue": null,
+        "type": "yes/no"
+      },
+      {
+        "id": "4.3",
+        "section": "4",
+        "name": "Has your staff received specific training on fall risks?",
+        "options": ["yes", "no"],
+        "value": null,
+        "defaultValue": null,
+        "type": "yes/no"
+      },
+      {
+        "id": "4.4",
+        "section": "4",
+        "name": "Has your staff been trained on how to prevent medication errors?",
+        "options": ["yes", "no"],
+        "value": null,
+        "defaultValue": null,
+        "type": "yes/no"
+      },
+      {
+        "id": "4.5",
+        "section": "4",
+        "name": "Does your facility have a policy for monitoring medication errors?",
+        "options": ["yes", "no"],
+        "value": null,
+        "defaultValue": null,
+        "type": "yes/no"
+      },
+      {
+        "id": "4.6",
+        "section": "4",
+        "name": "Has your staff received training specifically related to the care of residents with dementia?",
+        "options": ["yes", "no"],
+        "value": null,
+        "defaultValue": null,
+        "type": "yes/no"
+      },
+      {
+        "id": "4.7",
+        "section": "4",
+        "name": "If “yes” to 4.6, is the dementia care training offered to all staff members in the facility?",
+        "options": ["yes", "no"],
+        "value": null,
+        "defaultValue": null,
+        "type": "yes/no",
+        "requiresAnswer": [
+          {
+            "id": "4.6",
+            "value": "yes"
+          }
+        ]
+      }
+    ]
+  },
+  "5": {
+    "name": "Part 5. Environmental",
+    "id": "5",
+    "next": null,
+    "questions": [
+      {
+        "id": "5.1",
+        "section": "5",
+        "name": "What kind of outdoor spaces are available for resident use?",
+        "options": ["Patio", "Fenced walking path", "Garden", "Front porch / entry area", "other"],
+        "value": null,
+        "defaultValue": "null",
+        "type": "radio"
+      },
+      {
+        "id": "5.2",
+        "section": "5",
+        "name": "Is there a secure outdoor space available for use by residents with Alzheimers disease or another form of dementia?",
+        "options": ["yes", "no"],
+        "value": null,
+        "defaultValue": "null",
+        "type": "yes/no"
+      },
+      {
+        "id": "5.3",
+        "section": "5",
+        "name": "Do you have restrictive areas within your Alzheimers certified unit/building dependent upon the residents level or stage of Alzheimers disease or related condition?",
+        "options": ["yes", "no"],
+        "value": null,
+        "defaultValue": "null",
+        "type": "yes/no"
+      }
+    ]
+  }
+}
