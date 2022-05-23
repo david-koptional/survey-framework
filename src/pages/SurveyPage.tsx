@@ -1,7 +1,6 @@
 import { Page, Spacer } from '@geist-ui/core'
 import { useAtom } from 'jotai'
-import { useEffect } from 'react'
-import NextSection from '../components/display/NextSection'
+import { useCallback, useEffect } from 'react'
 import QuestionsList from '../components/display/QuestionsList'
 import SectionHeader from '../components/display/SectionHeader'
 import SkipModal from '../components/display/SkipModal'
@@ -9,6 +8,8 @@ import SurveyProgress from '../components/display/SurveyProgress'
 import facilitySurvey from '../data/surveys/facility.json'
 import { allQuestionsAtom } from '../store/atoms/questions'
 import { allSectionsAtom, currentSectionAtom } from '../store/atoms/section'
+import { readTextFile, writeFile } from '@tauri-apps/api/fs'
+import { downloadDir } from '@tauri-apps/api/path'
 import { Question } from '../types'
 
 const SurveyPage = () => {
@@ -17,6 +18,14 @@ const SurveyPage = () => {
   const [, setAllSections] = useAtom(allSectionsAtom)
 
   const [, setCurrentSection] = useAtom(currentSectionAtom)
+
+  const checkForIncompleteTest = useCallback(async () => {
+    const downloadPath = await downloadDir()
+
+    const path = `${downloadPath}/test.json`
+
+    await readTextFile(path)
+  }, [])
 
   useEffect(() => {
     const combinedQuestions: Question[] = []

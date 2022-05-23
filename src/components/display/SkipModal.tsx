@@ -9,10 +9,9 @@ const SkipModal = () => {
 
   return (
     <Modal visible={skip} onClose={() => ''}>
-      <Modal.Title>Modal</Modal.Title>
-      <Modal.Subtitle>This is a modal</Modal.Subtitle>
+      <Modal.Title font="18px">You are about to skip to another Question</Modal.Title>
       <Modal.Content>
-        <p>skip to aQuestion {question?.id}? </p>
+        <p>skip to question {question?.id}? </p>
       </Modal.Content>
       <Modal.Action passive>Cancel</Modal.Action>
       <Modal.Action onClick={() => confirmSkip({ id: question.section, questionId: skippingFrom.id })}>

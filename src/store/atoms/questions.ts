@@ -1,3 +1,5 @@
+import { writeFile } from '@tauri-apps/api/fs'
+import { downloadDir } from '@tauri-apps/api/path'
 import { atom } from 'jotai'
 import { Question } from '../../types'
 import { updateAllQuestions } from '../functions/questions'
@@ -21,7 +23,15 @@ export const allSectionQuestionsAnswered = atom<boolean>(get => {
 // Setter for allQuestionsAtom
 export const updateAllQuestionsAtom = atom(
   () => '',
-  (get, set, { id, value }) => {
+  async (get, set, { id, value }) => {
+    const downloadPath = await downloadDir()
+
+    const path = `${downloadPath}/test.json`
+
+    const updatedQuestions = updateAllQuestions(get(allQuestionsAtom), id, value)
+
+    await writeFile({ path, contents: JSON.stringify(updatedQuestions) })
+
     set(allQuestionsAtom, updateAllQuestions(get(allQuestionsAtom), id, value))
   }
 )

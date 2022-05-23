@@ -1,21 +1,20 @@
-import { Button } from '@geist-ui/core'
 import { writeFile } from '@tauri-apps/api/fs'
 import { downloadDir } from '@tauri-apps/api/path'
 import { useAtom } from 'jotai'
+import { useCallback, useEffect } from 'react'
 import { allQuestionsAtom } from '../store/atoms/questions'
 
-const ResultsPage = () => {
+export const useSaveTestStatus = () => {
   const [allQuestions] = useAtom(allQuestionsAtom)
 
-  const exportResults = async () => {
+  const saveTestStatus = useCallback(async () => {
     const downloadPath = await downloadDir()
 
-    const path = `${downloadPath}/results.json`
-
+    const path = `${downloadPath}/test.json`
     await writeFile({ path, contents: JSON.stringify(allQuestions) })
-  }
+  }, [allQuestions])
 
-  return <Button onClick={() => exportResults()}>Get Results</Button>
+  useEffect(() => {
+    saveTestStatus()
+  }, [saveTestStatus])
 }
-
-export default ResultsPage
