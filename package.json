@@ -9,12 +9,10 @@
     "tauri": "tauri"
   },
   "dependencies": {
-    "@chakra-ui/react": "^2.1.0",
-    "@emotion/react": "^11",
-    "@emotion/styled": "^11",
+    "@geist-ui/core": "^2.3.8",
+    "@geist-ui/icons": "^1.0.2",
     "@tauri-apps/api": "^1.0.0-rc.5",
-    "evergreen-ui": "^6.9.10",
-    "framer-motion": "^6",
+    "jotai": "^1.6.7",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "6"
