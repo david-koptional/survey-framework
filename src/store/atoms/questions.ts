@@ -24,7 +24,7 @@ export const sectionQuestionsAtom = atom<Question[]>(get => {
       }
     })
 
-  if (optionalQuestions) {
+  if (optionalQuestions.length > 0) {
     optionalQuestions.forEach(optionalQuestion => {
       optionalQuestion.requiresAnswer?.forEach(dependentQuestion => {
         const questionToHide = allQuestions.find(question => question.id === optionalQuestion.id)
