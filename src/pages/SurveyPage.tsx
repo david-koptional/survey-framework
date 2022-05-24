@@ -1,13 +1,23 @@
 import { Page, Spacer } from '@geist-ui/core'
+import { useAtom } from 'jotai'
+import { useEffect } from 'react'
+import NavigateSections from '../components/display/NavigateSections'
 import QuestionsList from '../components/display/QuestionsList'
 import SectionHeader from '../components/display/SectionHeader'
 import SkipModal from '../components/display/SkipModal'
 import SurveyProgress from '../components/display/SurveyProgress'
 import facilitySurvey from '../data/surveys/facility.json'
 import { useLoadSurvey } from '../hooks/useLoadSurvey'
+import { currentSectionAtom } from '../store/atoms/section'
 
 const SurveyPage = () => {
   useLoadSurvey(facilitySurvey)
+
+  const [currentSection] = useAtom(currentSectionAtom)
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [currentSection])
 
   return (
     <Page>
@@ -15,6 +25,7 @@ const SurveyPage = () => {
         <Spacer h={1} />
         <SurveyProgress />
         <Spacer h={1} />
+        <NavigateSections />
         <SectionHeader />
       </Page.Header>
       <Page.Content>

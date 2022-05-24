@@ -8,10 +8,10 @@ export const YesNoControl = ({ question }: { question: Question }) => {
   return (
     <Radio.Group value={value} onChange={val => setValue(val)} useRow>
       <Radio value="yes" name={'Yes'}>
-        <Text font="16px">Yes</Text>
+        <Text font="14px">Yes</Text>
       </Radio>
       <Radio value="no" name={'No'}>
-        <Text font="16px">No</Text>
+        <Text font="14px">No</Text>
       </Radio>
     </Radio.Group>
   )

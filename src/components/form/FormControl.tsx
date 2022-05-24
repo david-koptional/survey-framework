@@ -31,7 +31,7 @@ export const FormControl = ({ question }: { question: Question }) => {
   }
 
   return (
-    <Grid style={{ display: 'flex' }} key={question.id} direction="column" alignItems="center" justify="center" xs={24}>
+    <Grid style={{ display: 'flex' }} key={question.id} direction="column" alignItems="center" justify="center" xs={18}>
       <div style={{ display: 'flex', justifyContent: 'flex-start', width: '100%' }}>
         {question.extraInfo && (
           <>

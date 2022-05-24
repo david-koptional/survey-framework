@@ -17,4 +17,5 @@ export interface Section {
   id: string
   skipped?: boolean
   next: string | null
+  completed?: boolean
 }
