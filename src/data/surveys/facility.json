@@ -229,7 +229,7 @@
   "5": {
     "name": "Part 5. Environmental",
     "id": "5",
-    "next": null,
+    "next": "6",
     "questions": [
       {
         "id": "5.1",
@@ -256,6 +256,60 @@
         "options": ["yes", "no"],
         "value": null,
         "defaultValue": "null",
+        "type": "yes/no"
+      }
+    ]
+  },
+  "6": {
+    "name": "Part 6. Healthcare - Acquired Infections",
+    "id": "6",
+    "next": "7",
+    "questions": [
+      {
+        "id": "6.1",
+        "section": "6",
+        "name": "Has the facility discharged a resident in the previous 12 months due to the following infections? (Check all that apply)",
+        "options": ["UTI", "Pneumonia", "Bacterial diarrhea", "Other", "No discharges due to the above infections"],
+        "type": "radio"
+      },
+      {
+        "id": "6.2",
+        "section": "6",
+        "name": "Has the facility discharged a resident in the previous 12 months due to a skin breakdown?",
+        "options": ["yes", "no"],
+        "type": "yes/no"
+      },
+      {
+        "id": "6.3",
+        "section": "6",
+        "name": "Which of the following do you use in the prevention of skin breakdowns? Check all that apply",
+        "options": [
+          "Additional bathing",
+          "Staff training and monitoring",
+          "Turning/positioning/repositioning",
+          "Use of special equipment (such as mattress or pads)"
+        ],
+        "type": "radio"
+      }
+    ]
+  },
+  "7": {
+    "name": "Part 7. Falls",
+    "id": "7",
+    "next": null,
+    "questions": [
+      {
+        "id": "7.1",
+        "name": "Are residents assessed for fall risk upon admission to the facility?",
+        "section": "7",
+        "options": ["yes", "no"],
+        "type": "yes/no"
+      },
+      {
+        "id": "7.2",
+        "name": "What are most falls attributed to? Check all that apply:",
+        "section": "7",
+        "options": ["Resident’s gait ability", "Misuse of adaptive aides", "Dementia/memory issues", "Medication"],
         "type": "yes/no"
       }
     ]
