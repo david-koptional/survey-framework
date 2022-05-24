@@ -1,9 +1,5 @@
 import { Grid, Spacer, Text, Tooltip } from '@geist-ui/core'
 import { QuestionCircle } from '@geist-ui/icons'
-import { useAtom } from 'jotai'
-import { useIsVisible } from '../../hooks/useIsVisible'
-import { useToggleOptional } from '../../hooks/useToggleOptional'
-import { allQuestionsAtom } from '../../store/atoms/questions'
 import { Question } from '../../types'
 import CheckboxControl from './CheckboxControl'
 import DateControl from './DateControl'
@@ -13,10 +9,6 @@ import RadioControl from './RadioControl'
 import YesNoControl from './YesNoControl'
 
 export const FormControl = ({ question }: { question: Question }) => {
-  const [allQuestions] = useAtom(allQuestionsAtom)
-  const [visible] = useIsVisible(question, allQuestions)
-  useToggleOptional(question.id, visible)
-
   const returnFormControl = () => {
     if (question.type === 'radio') {
       return <RadioControl question={question} />
@@ -39,14 +31,7 @@ export const FormControl = ({ question }: { question: Question }) => {
   }
 
   return (
-    <Grid
-      style={{ display: visible ? 'flex' : 'none' }}
-      key={question.id}
-      direction="column"
-      alignItems="center"
-      justify="center"
-      xs={24}
-    >
+    <Grid style={{ display: 'flex' }} key={question.id} direction="column" alignItems="center" justify="center" xs={24}>
       <div style={{ display: 'flex', justifyContent: 'flex-start', width: '100%' }}>
         {question.extraInfo && (
           <>

@@ -9,7 +9,7 @@ export interface Question {
   optional?: boolean
   extraInfo?: string
   skipsTo?: { id: string; value: string }[]
-  requiresAnswer?: { id: string; value: string }[]
+  requiresAnswer?: { id: string; value: string; sliceFrom: string; sliceTo: string }[]
 }
 
 export interface Section {

@@ -140,7 +140,9 @@
         "requiresAnswer": [
           {
             "id": "3.2",
-            "value": "yes"
+            "value": "yes",
+            "sliceFrom": "3.2",
+            "sliceTo": "3.3"
           }
         ]
       }
@@ -216,7 +218,9 @@
         "requiresAnswer": [
           {
             "id": "4.6",
-            "value": "yes"
+            "value": "yes",
+            "sliceFrom": "4.6",
+            "sliceTo": "4.6"
           }
         ]
       }

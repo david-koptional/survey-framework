@@ -8,6 +8,8 @@ import NextSection from './NextSection'
 const QuestionsList = () => {
   const [sectionQuestions] = useAtom(sectionQuestionsAtom)
 
+  console.log(sectionQuestions)
+
   return (
     <GridContainer justify="center" direction="column">
       <Grid xs={24} lg={12} justify="center" direction="column">

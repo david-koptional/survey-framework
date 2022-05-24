@@ -21,10 +21,10 @@ const NextSection = () => {
       return set(`${currentSection?.id ? Number(currentSection.id) + 1 : 1}`)
     }
     return navigate('/results')
-  }, [currentSection.id, currentSection.next, set])
+  }, [currentSection.id, currentSection.next, navigate, set])
 
   return (
-    <Button disabled={!allQuestionsAnswered} onClick={handleNext}>
+    <Button loading={!sectionQuestions.length} disabled={!allQuestionsAnswered} onClick={handleNext}>
       {currentSection.next ? 'Next Section' : 'Submit'}
     </Button>
   )
