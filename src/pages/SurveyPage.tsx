@@ -7,11 +7,12 @@ import SectionHeader from '../components/display/SectionHeader'
 import SkipModal from '../components/display/SkipModal'
 import SurveyProgress from '../components/display/SurveyProgress'
 import facilitySurvey from '../data/surveys/facility.json'
+import residentSurvey from '../data/surveys/resident.json'
 import { useLoadSurvey } from '../hooks/useLoadSurvey'
 import { currentSectionAtom } from '../store/atoms/section'
 
-const SurveyPage = () => {
-  useLoadSurvey(facilitySurvey)
+const SurveyPage = ({ survey }: { survey: 'resident' | 'facility' }) => {
+  useLoadSurvey(survey === 'facility' ? facilitySurvey : residentSurvey)
 
   const [currentSection] = useAtom(currentSectionAtom)
 

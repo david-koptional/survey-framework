@@ -13,13 +13,13 @@ const HomePage = () => {
       <Page.Content>
         <GridContainer justify="center" gap={2}>
           <Grid xs={24} justify="center">
-            <Link to="/survey/survey1">
-              <Button>Survey 1</Button>
+            <Link to="/survey/facility">
+              <Button>Facility Survey</Button>
             </Link>
           </Grid>
           <Grid xs={24} justify="center">
-            <Link to="/survey/survey1">
-              <Button>Survey 2</Button>
+            <Link to="/survey/resident">
+              <Button>Resident Survey</Button>
             </Link>
           </Grid>
         </GridContainer>
